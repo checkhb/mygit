@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userServiceImp"
+          class="com.example.springaop.springAop.UserServiceImp" />
+
+    <bean id="userInterceptor" class="com.example.springaop.springAop.UserInterceptor" />
+
+    <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 代理接口 -->
+        <property name="proxyInterfaces">
+            <value>com.example.springaop.springAop.UserService</value>
+        </property>
+        <!-- 目标实现类 -->
+        <property name="target">
+            <ref  bean ="userServiceImp" />
+        </property>
+        <!-- 拦截器 -->
+        <property name="interceptorNames">
+            <list>
+                <value>userInterceptor</value>
+            </list>
+        </property>
+    </bean>
+</beans>
