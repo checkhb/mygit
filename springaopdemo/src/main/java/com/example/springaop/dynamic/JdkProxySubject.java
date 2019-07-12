@@ -24,12 +24,12 @@ public class JdkProxySubject implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("before");
         Object invoke = null;
-        try{
+        try {
             invoke = method.invoke(targetObject, args);
-        }catch (Exception e){
-            System.out.println("ex:"+e.getMessage());
+        } catch (Exception e) {
+            System.out.println("ex:" + e.getMessage());
             throw e;
-        }finally {
+        } finally {
             System.out.println("after");
         }
         return invoke;

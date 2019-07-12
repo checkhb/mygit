@@ -13,9 +13,9 @@ public class FutureTaskDemo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         FutureTask<String> futureTask = new FutureTask<String>(new MyCallable());
         new Thread(futureTask).start();
-        if(!futureTask.isDone()){
+        if (!futureTask.isDone()) {
             System.out.println("task no finished,please wait!");
         }
-        System.out.println("task retrun:"+futureTask.get());
+        System.out.println("task retrun:" + futureTask.get());
     }
 }

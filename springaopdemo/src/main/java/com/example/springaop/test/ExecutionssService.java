@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExecutionssService {
 
-    public Object executionTest() throws Exception{
+    public Object executionTest() throws Exception {
         String user = CurrentUserHolder.get();
-        int a = 10/0;
+        int a = 10 / 0;
         System.out.println("ExecutionService 被拦截");
         return ExecutionssService.class;
     }

@@ -5,16 +5,16 @@ public class YieldDemo {
         Runnable yieldTask = new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i <=10 ; i++) {
-                    System.out.println(Thread.currentThread().getName()+i);
-                    if (i==5) {
+                for (int i = 0; i <= 10; i++) {
+                    System.out.println(Thread.currentThread().getName() + i);
+                    if (i == 5) {
                         Thread.yield();
                     }
                 }
             }
         };
         Thread a = new Thread(yieldTask, "A");
-        Thread b = new Thread(yieldTask,"B");
+        Thread b = new Thread(yieldTask, "B");
         a.start();
         b.start();
     }

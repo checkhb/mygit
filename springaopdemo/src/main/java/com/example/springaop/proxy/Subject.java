@@ -8,5 +8,6 @@ package com.example.springaop.proxy;
  */
 public interface Subject {
     void requset();
+
     void hello();
 }

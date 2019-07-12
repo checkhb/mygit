@@ -13,12 +13,12 @@ public class NotifyAndNotityallDemo {
 
         final NotifyAndNotityallDemo test = new NotifyAndNotityallDemo();
 
-     Runnable waitTask = new Runnable(){
+        Runnable waitTask = new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     test.shouldGo();
-                } catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 System.out.println(Thread.currentThread().getName() + " finished Execution");
@@ -26,39 +26,39 @@ public class NotifyAndNotityallDemo {
             }
         };
 
-     Runnable notifyTask = new Runnable() {
-         @Override
-         public void run() {
-             test.go();
-             System.out.println(Thread.currentThread().getName() + " finished Execution");
-         }
-     };
-     Thread t1 = new Thread(waitTask,"WT1");
-     Thread t2 = new Thread(waitTask,"WT2");
-     Thread t3 = new Thread(waitTask,"WT3");
-     Thread t4 = new Thread(notifyTask,"NT4");
+        Runnable notifyTask = new Runnable() {
+            @Override
+            public void run() {
+                test.go();
+                System.out.println(Thread.currentThread().getName() + " finished Execution");
+            }
+        };
+        Thread t1 = new Thread(waitTask, "WT1");
+        Thread t2 = new Thread(waitTask, "WT2");
+        Thread t3 = new Thread(waitTask, "WT3");
+        Thread t4 = new Thread(notifyTask, "NT4");
 
-     t1.start();
-     t2.start();
-     t3.start();
+        t1.start();
+        t2.start();
+        t3.start();
 
-     Thread.sleep(200);
+        Thread.sleep(200);
 
-     t4.start();
+        t4.start();
 
     }
 
-    private synchronized void shouldGo() throws InterruptedException{
-        while (go!=true){
-            System.out.println(Thread.currentThread()+" is going to wait on this object");
+    private synchronized void shouldGo() throws InterruptedException {
+        while (go != true) {
+            System.out.println(Thread.currentThread() + " is going to wait on this object");
             wait();
             System.out.println(Thread.currentThread().getName() + " is woken up");
         }
         go = false;
     }
 
-    private synchronized void go(){
-        while (go == false){
+    private synchronized void go() {
+        while (go == false) {
             System.out.println(Thread.currentThread() + " is going to notify all or one thread");
             go = true;
             //notifyall()：进入等待池中的所有线程进入锁池中竞争获取锁的机会

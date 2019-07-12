@@ -8,6 +8,6 @@ package com.example.springaop.thread;
  */
 public class ThreadCurrentDemo {
     public static void main(String[] args) {
-        System.out.println("currentThread:"+Thread.currentThread().getName());
+        System.out.println("currentThread:" + Thread.currentThread().getName());
     }
 }

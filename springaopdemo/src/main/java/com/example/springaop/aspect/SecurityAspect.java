@@ -21,7 +21,7 @@ public class SecurityAspect {
     AuthService authService;
 
     @Pointcut("@annotation(com.example.springaop.annotation.AdminOnly)")
-    private void adminOnly(){
+    private void adminOnly() {
 
     }
 
@@ -31,7 +31,7 @@ public class SecurityAspect {
 //    }
 
     @After("adminOnly()")
-    public void check2(){
+    public void check2() {
         authService.checkAccess();
     }
 }

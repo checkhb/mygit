@@ -20,12 +20,12 @@ public class ProxyObject implements Subject {
     @Override
     public void requset() {
         System.out.println("Before");
-        try{
+        try {
             targetObject.requset();
-        }catch (Exception e){
-            System.out.println("ex:"+e.getMessage());
+        } catch (Exception e) {
+            System.out.println("ex:" + e.getMessage());
             throw e;
-        }finally {
+        } finally {
             System.out.println("after");
         }
     }

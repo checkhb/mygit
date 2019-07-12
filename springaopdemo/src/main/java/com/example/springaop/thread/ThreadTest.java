@@ -7,7 +7,7 @@ package com.example.springaop.thread;
  * @Version 1.0
  */
 public class ThreadTest {
-    public static void attack(){
+    public static void attack() {
         System.out.println("attack");
         System.out.println("current thread is:" + Thread.currentThread().getName());
 
@@ -16,7 +16,7 @@ public class ThreadTest {
     public static void main(String[] args) {
         Thread thread = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 attack();
             }
         };

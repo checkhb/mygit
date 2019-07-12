@@ -14,7 +14,7 @@ public class WaitSleepDemo {
             @Override
             public void run() {
                 System.out.println("thread A is waiting to get lock");
-                synchronized (lock){
+                synchronized (lock) {
                     try {
                         System.out.println("thread A is get lock");
                         //只让出cpu，不会释放锁
@@ -38,24 +38,24 @@ public class WaitSleepDemo {
             e.printStackTrace();
         }
         new Thread(new Runnable() {
-        @Override
-        public void run() {
-            System.out.println("thread B is waiting to get lock");
-            synchronized (lock){
-                try {
-                    System.out.println("thread B is get lock");
-                    //只让出cpu，不会释放锁
-                    lock.wait(10);
-                    System.out.println("thead B is done");
-                    //释放其他线程的锁
-                   // lock.notifyAll();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            @Override
+            public void run() {
+                System.out.println("thread B is waiting to get lock");
+                synchronized (lock) {
+                    try {
+                        System.out.println("thread B is get lock");
+                        //只让出cpu，不会释放锁
+                        lock.wait(10);
+                        System.out.println("thead B is done");
+                        //释放其他线程的锁
+                        // lock.notifyAll();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
+                }
             }
-        }
-    }).start();
-}
+        }).start();
+    }
 
 }

@@ -8,6 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockDemo implements Runnable {
     //fair=true 是公平锁，就是获取锁的概率相同，false是随机的。
     private static ReentrantLock lock = new ReentrantLock(false);
+
     @Override
     public void run() {
         while (true) {

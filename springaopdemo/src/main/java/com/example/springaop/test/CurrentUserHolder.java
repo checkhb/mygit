@@ -9,11 +9,11 @@ package com.example.springaop.test;
 public class CurrentUserHolder {
     private static final ThreadLocal<String> holder = new ThreadLocal<String>();
 
-    public static String get(){
-        return holder.get()==null?"unknown":holder.get();
+    public static String get() {
+        return holder.get() == null ? "unknown" : holder.get();
     }
 
-    public static void set(String user){
+    public static void set(String user) {
         holder.set(user);
     }
 }

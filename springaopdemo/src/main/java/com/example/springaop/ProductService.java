@@ -19,18 +19,19 @@ public class ProductService {
     AuthService authService;
 
     @AdminOnly
-    public void insert(Product product){
-       authService.checkAccess();
+    public void insert(Product product) {
+        authService.checkAccess();
         System.out.println("insert product");
     }
+
     @AdminOnly
-    public void delete(Long id){
+    public void delete(Long id) {
         authService.checkAccess();
         System.out.println("delete product");
     }
 
 
-    public void update(Long id){
+    public void update(Long id) {
         authService.checkAccess();
         System.out.println("delete product");
     }

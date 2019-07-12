@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="userServiceImp"
-          class="com.example.springaop.springAop.UserServiceImp" />
+          class="com.example.springaop.springAop.UserServiceImp"/>
 
-    <bean id="userInterceptor" class="com.example.springaop.springAop.UserInterceptor" />
+    <bean id="userInterceptor" class="com.example.springaop.springAop.UserInterceptor"/>
 
     <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
         <!-- 代理接口 -->
@@ -15,7 +15,7 @@
         </property>
         <!-- 目标实现类 -->
         <property name="target">
-            <ref  bean ="userServiceImp" />
+            <ref bean="userServiceImp"/>
         </property>
         <!-- 拦截器 -->
         <property name="interceptorNames">

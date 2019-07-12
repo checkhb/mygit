@@ -5,10 +5,11 @@ package com.example.springaop.thread;
  */
 public class SynchronizedDemo {
     public void synocsTask() {
-        synchronized (this){
+        synchronized (this) {
             System.out.println("Hello");
         }
     }
+
     public synchronized void syncTask() {
         System.out.println("hello again");
     }

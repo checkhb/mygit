@@ -4,14 +4,14 @@ package com.example.springaop.throwable;
  * @author hubin
  */
 public class ErrorAndException {
-    public static int dowork(){
+    public static int dowork() {
         try {
-            int i = 10/0;
+            int i = 10 / 0;
             System.out.println("i=" + i);
-        } catch (ArithmeticException e){
+        } catch (ArithmeticException e) {
             System.out.println("ArithmeticException:" + e);
             return 0;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Exception:" + e);
             return 1;
         } finally {

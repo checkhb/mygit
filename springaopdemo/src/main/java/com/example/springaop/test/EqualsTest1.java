@@ -4,12 +4,11 @@ import java.util.*;
 import java.lang.Comparable;
 
 /**
- * @desc equals()的测试程序。
- *
  * @author skywang
+ * @desc equals()的测试程序。
  * @emai kuiwu-wang@163.com
  */
-public class EqualsTest1{
+public class EqualsTest1 {
 
     public static void main(String[] args) {
         // 新建2个相同内容的Person对象，
@@ -33,7 +32,7 @@ public class EqualsTest1{
 
         @Override
         public String toString() {
-            return name + " - " +age;
+            return name + " - " + age;
         }
     }
 }

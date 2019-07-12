@@ -15,7 +15,7 @@ public class ThreadPoolDemo {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Future<String> submit = executorService.submit(new MyCallable());
-        if(!submit.isDone()){
+        if (!submit.isDone()) {
             System.out.println("task no finished,please wait!");
         }
         try {

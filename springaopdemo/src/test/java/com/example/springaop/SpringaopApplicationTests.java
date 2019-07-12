@@ -16,20 +16,21 @@ public class SpringaopApplicationTests {
     ProductService productService;
 
 
-
     @Autowired
     ExecutionssService executionService;
 
     @Test
-    public void annoInsertTests(){
+    public void annoInsertTests() {
         CurrentUserHolder.set("tom");
         productService.delete(1L);
     }
+
     @Test
-    public void adminInsert(){
+    public void adminInsert() {
         CurrentUserHolder.set("admin");
         productService.delete(1L);
     }
+
     @Test
     public void execution() throws Exception {
         executionService.executionTest();

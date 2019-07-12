@@ -4,12 +4,11 @@ import java.util.*;
 import java.lang.Comparable;
 
 /**
- * @desc equals()的测试程序。
- *
  * @author skywang
+ * @desc equals()的测试程序。
  * @emai kuiwu-wang@163.com
  */
-public class EqualsTest2{
+public class EqualsTest2 {
 
     public static void main(String[] args) {
         // 新建2个相同内容的Person对象，
@@ -32,30 +31,30 @@ public class EqualsTest2{
         }
 
         public String toString() {
-            return name + " - " +age;
+            return name + " - " + age;
         }
 
         /**
          * @desc 覆盖equals方法
          */
         @Override
-        public boolean equals(Object obj){
-            if(obj == null){
+        public boolean equals(Object obj) {
+            if (obj == null) {
                 return false;
             }
 
             //如果是同一个对象返回true，反之返回false
-            if(this == obj){
+            if (this == obj) {
                 return true;
             }
 
             //判断是否类型相同
-            if(this.getClass() != obj.getClass()){
+            if (this.getClass() != obj.getClass()) {
                 return false;
             }
 
-            Person person = (Person)obj;
-            return name.equals(person.name) && age==person.age;
+            Person person = (Person) obj;
+            return name.equals(person.name) && age == person.age;
         }
     }
 }
